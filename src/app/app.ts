@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { WrestlerListComponent } from "./components/wrestler-list/wrestler-list";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [WrestlerListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

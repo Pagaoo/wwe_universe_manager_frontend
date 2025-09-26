@@ -1,0 +1,11 @@
+<h2>Lista de lutadores</h2>
+
+<div *ngIf="isLoading">
+  <p>Buscando dados dos lutadores</p>
+</div>
+
+<ul *ngIf="!isLoading && wrestlers.length > 0">
+  <li *ngFor="let wrestler of wrestlers">
+      {{ wrestler.id }} - {{ wrestler.name }}
+  </li>
+</ul>
