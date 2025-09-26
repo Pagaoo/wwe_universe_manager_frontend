@@ -1,17 +1,30 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Compiled output
+# Build Output & Cache
 /dist
 /tmp
 /out-tsc
 /bazel-out
+/coverage
+/.angular/
+.sass-cache/
+*.tsbuildinfo
 
-# Node
+# Dependencies
 /node_modules
-npm-debug.log
-yarn-error.log
+/package-lock.json
+/yarn.lock
+/typings
 
-# IDEs and editors
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/connect.lock
+/libpeerconnection.log
+testem.log
+
+# IDEs and Editors
 .idea/
 .project
 .classpath
@@ -20,53 +33,23 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
-# Visual Studio Code
+# Visual Studio Code specific (allow some files)
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-__screenshots__/
-
-# System files
-.DS_Store
-Thumbs.db
-
-# Angular specific
-/dist/
-/out-tsc/
-/tmp/
-/coverage/
-/e2e/test-output/
-/.angular/
-.angular/
-
-# Node modules and dependency files
-/node_modules/
-/package-lock.json
-/yarn.lock
+.history/
 
 # Environment files
 /.env
 
-# Angular CLI and build artefacts
-/.angular-cli.json
-/.ng/
+# Miscellaneous
+/e2e/test-output/
+__screenshots__/
+.angular-cli.json
+.ng/
 
-# TypeScript cache
-*.tsbuildinfo
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# System Files
+.DS_Store
+Thumbs.db
