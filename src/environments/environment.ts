@@ -1,3 +1,5 @@
+import { environment as localEnvironment } from "./environment.local";
 export const environment = {
-  urlApi: '${API_URL}'
+  production: false,
+  ...localEnvironment
 };
