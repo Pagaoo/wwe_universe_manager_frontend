@@ -53,3 +53,5 @@ __screenshots__/
 # System Files
 .DS_Store
 Thumbs.db
+
+/src/environments/environment.local.ts

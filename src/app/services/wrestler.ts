@@ -10,11 +10,11 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class WrestlerService {
-  private apiUrl = `${environment.urlApi}/wrestlers`
-
   constructor(private http: HttpClient) {}
 
-  wrestlersList(): Observable<Wrestler[]> {
+  private apiUrl = `${environment.apiUrl}/wrestlers`
+
+  listWrestlers(): Observable<Wrestler[]> {
     return this.http.get<Wrestler[]>(this.apiUrl)
   }
 }
