@@ -37,7 +37,13 @@ export class WrestlerListComponent implements OnInit{
 
     dialogRef.afterClosed().subscribe(result => {
       if(result) {
-        this.loadWrestlers()
+        this.wrestlerService.saveEditWrestler(result.id, wrestler, result).subscribe({
+          next: (res) => {
+            const index = this.wrestlers.findIndex(wrestler => wrestler.id === res.id)
+            if(index !== -1) this.wrestlers[index] = res
+          },
+          error: (error) => console.log(error)
+        })
       }
     })
   }

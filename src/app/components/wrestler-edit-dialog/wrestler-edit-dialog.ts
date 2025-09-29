@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { WrestlerService } from '../../services/wrestler';
 
 @Component({
   selector: 'app-wrestler-edit-dialog',
@@ -18,7 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class WrestlerEditDialog {
   constructor(public dialogRef: MatDialogRef<WrestlerEditDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: Wrestler
+    @Inject(MAT_DIALOG_DATA) public data: Wrestler,
+    private wrestlerService: WrestlerService
   ) {}
 
   onNoClick(): void {
