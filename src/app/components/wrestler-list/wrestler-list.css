@@ -1,0 +1,11 @@
+html, body {height: 100%;}
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+#wrestlers-not-found {
+  text-align: center;
+  padding: 20px;
+}
