@@ -21,6 +21,5 @@ export function buildJsonPatch(original: any, updated: any) {
       }
     }
   }
-
   return patch;
 }

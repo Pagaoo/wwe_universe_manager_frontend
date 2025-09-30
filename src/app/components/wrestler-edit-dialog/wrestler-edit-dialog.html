@@ -3,7 +3,7 @@
   <p>Altere os dados abaixo:</p>
 
   <mat-form-field appearance="fill">
-    <mat-label>Nome</mat-label>
+    <mat-label>Name</mat-label>
     <input matInput [(ngModel)]="data.name">
   </mat-form-field>
 
@@ -16,9 +16,14 @@
     <mat-label>Altura (cm)</mat-label>
     <input matInput type="number" [(ngModel)]="data.height">
   </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Birth Date</mat-label>
+    <input matInput type="date" [(ngModel)]="data.birthDate">
+  </mat-form-field>
 </div>
 
 <div mat-dialog-actions align="end">
-  <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-flat-button color="primary" (click)="onSaveClick()">Salvar</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-flat-button color="primary" (click)="onSaveClick()">Save</button>
 </div>
