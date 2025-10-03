@@ -6,19 +6,23 @@ import { environment } from '../../environments/environment';
 import { buildJsonPatch } from '../utils/buildJsonPatch';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WrestlerService {
   constructor(private http: HttpClient) {}
 
-  private apiUrl = `${environment.apiUrl}/wrestlers`
+  private apiUrl = `${environment.apiUrl}/wrestlers`;
 
   listWrestlers(): Observable<Wrestler[]> {
-    return this.http.get<Wrestler[]>(this.apiUrl)
+    return this.http.get<Wrestler[]>(this.apiUrl);
   }
 
   updateWrestler(id: number, original: Wrestler, updated: Wrestler): Observable<any> {
-    const patchBody = buildJsonPatch(original, updated)
-    return this.http.patch(`${this.apiUrl}/${id}`, patchBody)
+    const patchBody = buildJsonPatch(original, updated);
+    return this.http.patch(`${this.apiUrl}/${id}`, patchBody);
+  }
+
+  deleteWrestler(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
