@@ -22,6 +22,8 @@ export class WrestlerListComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'weight', 'height', 'age', 'actions'];
 
+  displayedColumns: string[] = ["name", "weight", "height", "age", "actions"]
+
   constructor(private wrestlerService: WrestlerService, public dialog: MatDialog) {}
 
   ngOnInit(): void {

@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { WrestlerService } from '../../services/wrestler';
+import { buildJsonPatch } from '../../utils/buildJsonPatch';
 
 @Component({
   selector: 'app-wrestler-edit-dialog',
