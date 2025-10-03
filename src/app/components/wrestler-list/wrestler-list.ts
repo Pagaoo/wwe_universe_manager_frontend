@@ -8,19 +8,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { ConfirmDialog } from '../confirm-dialog/confirm-dialog';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-wrestler-list',
   standalone: true,
   templateUrl: './wrestler-list.html',
   styleUrl: './wrestler-list.css',
-  imports: [MatTableModule, MatButtonModule, MatIconModule, MatMenuModule],
+  imports: [MatTableModule, MatButtonModule, MatIconModule, MatMenuModule, DatePipe],
 })
 export class WrestlerListComponent implements OnInit {
   wrestlers: Wrestler[] = [];
   isLoading = true;
 
-  displayedColumns: string[] = ['name', 'weight', 'height', 'age', 'actions'];
+  displayedColumns: string[] = ['name', 'weightInKg', 'heightInCm', 'heightFormatted', 'birthDate', 'age', 'actions'];
 
   constructor(private wrestlerService: WrestlerService, public dialog: MatDialog) {}
 

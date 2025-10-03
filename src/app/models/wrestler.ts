@@ -1,8 +1,12 @@
 export interface Wrestler {
   id: number;
   name: string;
-  height: number;
-  weight: number;
+  heightInFeet: number;
+  heightInInches: number;
+  heightInCm: number;
+  heightFormatted: string;
+  weightInPounds: number;
+  weightInKg: number;
   birthDate: string;
   age: number;
   createdAt: string;

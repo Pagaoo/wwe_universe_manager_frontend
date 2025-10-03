@@ -1,5 +1,9 @@
 export function buildJsonPatch(original: any, updated: any) {
   const patch: any[] = [];
+  const patchMapper: { [key: string]: string } = {
+    weightInKg: "/WeightInKgToPounds",
+    heightInCm: "/HeightInCmToFeetAndInch"
+  }
 
   for (const key in updated) {
     if (updated.hasOwnProperty(key)) {
@@ -7,6 +11,7 @@ export function buildJsonPatch(original: any, updated: any) {
       const updatedValue = updated[key]
 
       if (originalValue !== updatedValue) {
+        const path = patchMapper[key] || `/${key}`
         let valueToSend = updatedValue
 
         if (updated instanceof Date) {
@@ -15,7 +20,7 @@ export function buildJsonPatch(original: any, updated: any) {
 
         patch.push({
           op: 'replace',
-          path: `/${key}`,
+          path: path,
           value: valueToSend
         });
       }

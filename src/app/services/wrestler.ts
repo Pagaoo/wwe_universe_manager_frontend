@@ -22,7 +22,7 @@ export class WrestlerService {
     return this.http.patch(`${this.apiUrl}/${id}`, patchBody);
   }
 
-  deleteWrestler(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  deleteWrestler(id: number): Observable<Wrestler> {
+    return this.http.delete<Wrestler>(`${this.apiUrl}/${id}`);
   }
 }
