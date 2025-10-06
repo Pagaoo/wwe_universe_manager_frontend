@@ -1,0 +1,24 @@
+.sidebar-container {
+  background-color: #f0f0f0;
+  width: 240px;
+  padding: 16px;
+  box-sizing: border-box;
+  border-right: 1px solid #dcdcdc;
+}
+
+.sidebar-container h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 0;
+  padding: 0 16px;
+}
+
+.active-link {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #3f51b5;
+  border-radius: 4px;
+}
+
+.active-link mat-icon {
+  color: #3f51b5;
+}

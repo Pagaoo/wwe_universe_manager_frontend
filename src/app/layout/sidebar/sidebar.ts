@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import { MatListItem, MatNavList } from '@angular/material/list';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  imports: [MatNavList, MatListItem, RouterLink, RouterLinkActive, MatIcon],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })
