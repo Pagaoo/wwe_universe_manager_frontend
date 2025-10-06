@@ -9,6 +9,7 @@ import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-wrestler-create-dialog',
+  standalone: true,
   imports: [MatDialogModule, MatFormField, MatLabel, MatInput, MatButton, FormsModule],
   templateUrl: './wrestler-create-dialog.html',
   styleUrl: './wrestler-create-dialog.css',

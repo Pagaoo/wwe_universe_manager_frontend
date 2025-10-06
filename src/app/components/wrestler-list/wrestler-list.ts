@@ -1,25 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Wrestler } from '../../models/wrestler';
 import { WrestlerService } from '../../services/wrestler';
 import { MatDialog } from '@angular/material/dialog';
 import { WrestlerEditDialog } from '../wrestler-edit-dialog/wrestler-edit-dialog';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { ConfirmDialog } from '../confirm-dialog/confirm-dialog';
 import { DatePipe } from '@angular/common';
 import { WrestlerCreateDialog } from '../wrestler-create-dialog/wrestler-create-dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-wrestler-list',
   standalone: true,
   templateUrl: './wrestler-list.html',
   styleUrl: './wrestler-list.css',
-  imports: [MatTableModule, MatButtonModule, MatIconModule, MatMenuModule, DatePipe],
+  imports: [
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    DatePipe,
+    MatPaginatorModule,
+    MatCardModule
+  ],
 })
 export class WrestlerListComponent implements OnInit {
-  wrestlers: Wrestler[] = [];
+  dataSource = new MatTableDataSource<Wrestler>();
+  //wrestlers: Wrestler[] = [];
   isLoading = true;
 
   displayedColumns: string[] = [
@@ -32,6 +43,10 @@ export class WrestlerListComponent implements OnInit {
     'actions',
   ];
 
+  @ViewChild(MatPaginator) set matPaginator(paginator: MatPaginator) {
+    this.dataSource.paginator = paginator;
+  }
+
   constructor(private wrestlerService: WrestlerService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
@@ -41,7 +56,7 @@ export class WrestlerListComponent implements OnInit {
   loadWrestlers(): void {
     this.isLoading = true;
     this.wrestlerService.listWrestlers().subscribe((data) => {
-      this.wrestlers = data;
+      this.dataSource.data = data;
       this.isLoading = false;
     });
   }
