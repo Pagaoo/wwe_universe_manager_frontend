@@ -19,7 +19,7 @@
 
       <ng-container matColumnDef="weightInKg">
         <th mat-header-cell *matHeaderCellDef>Weight (kg)</th>
-        <td mat-cell *matCellDef="let wrestler">{{ wrestler.weightInKg }}</td>
+        <td mat-cell *matCellDef="let wrestler">{{ wrestler.weightInKg | number: "1.2-2"}}</td>
       </ng-container>
 
       <ng-container matColumnDef="heightInCm">
