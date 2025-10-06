@@ -1,9 +1,14 @@
-<h2>Lista de lutadores</h2>
+<div>
+  <h2>Lista de lutadores</h2>
+  <button matFab extended (click)="openCreateDialog()">
+    <mat-icon>add</mat-icon>
+    <span>Adicionar lutador</span>
+  </button>
+</div>
 
 @if (isLoading) {
 <p>Buscando os lutadores</p>
 } @else {
-
 <table mat-table [dataSource]="wrestlers" class="mat-elevation-z8">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
@@ -11,23 +16,23 @@
   </ng-container>
 
   <ng-container matColumnDef="weightInKg">
-    <th mat-header-cell *matHeaderCellDef>weight (kg)</th>
+    <th mat-header-cell *matHeaderCellDef>Weight (kg)</th>
     <td mat-cell *matCellDef="let wrestler">{{ wrestler.weightInKg }}</td>
   </ng-container>
 
   <ng-container matColumnDef="heightInCm">
-    <th mat-header-cell *matHeaderCellDef>height (cm)</th>
+    <th mat-header-cell *matHeaderCellDef>Height (cm)</th>
     <td mat-cell *matCellDef="let wrestler">{{ wrestler.heightInCm }}</td>
   </ng-container>
 
   <ng-container matColumnDef="heightFormatted">
-    <th mat-header-cell *matHeaderCellDef>height</th>
+    <th mat-header-cell *matHeaderCellDef>Height</th>
     <td mat-cell *matCellDef="let wrestler">{{ wrestler.heightFormatted }}</td>
   </ng-container>
 
   <ng-container matColumnDef="birthDate">
-    <th mat-header-cell *matHeaderCellDef>birth date</th>
-    <td mat-cell *matCellDef="let wrestler">{{ wrestler.birthDate | date: "dd/MM/yyyy"}}</td>
+    <th mat-header-cell *matHeaderCellDef>Birth Date</th>
+    <td mat-cell *matCellDef="let wrestler">{{ wrestler.birthDate | date : 'dd/MM/yyyy' }}</td>
   </ng-container>
 
   <ng-container matColumnDef="age">

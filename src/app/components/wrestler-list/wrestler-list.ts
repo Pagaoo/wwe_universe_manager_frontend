@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { ConfirmDialog } from '../confirm-dialog/confirm-dialog';
 import { DatePipe } from '@angular/common';
+import { WrestlerCreateDialog } from '../wrestler-create-dialog/wrestler-create-dialog';
 
 @Component({
   selector: 'app-wrestler-list',
@@ -21,7 +22,15 @@ export class WrestlerListComponent implements OnInit {
   wrestlers: Wrestler[] = [];
   isLoading = true;
 
-  displayedColumns: string[] = ['name', 'weightInKg', 'heightInCm', 'heightFormatted', 'birthDate', 'age', 'actions'];
+  displayedColumns: string[] = [
+    'name',
+    'weightInKg',
+    'heightInCm',
+    'heightFormatted',
+    'birthDate',
+    'age',
+    'actions',
+  ];
 
   constructor(private wrestlerService: WrestlerService, public dialog: MatDialog) {}
 
@@ -41,6 +50,18 @@ export class WrestlerListComponent implements OnInit {
     const dialogRef = this.dialog.open(WrestlerEditDialog, {
       width: '500px',
       data: { ...wrestler }, //copiando wrestler com o ...
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.loadWrestlers();
+      }
+    });
+  }
+
+  openCreateDialog(): void {
+    const dialogRef = this.dialog.open(WrestlerCreateDialog, {
+      width: '500px',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
