@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { ConfirmDialog } from '../confirm-dialog/confirm-dialog';
-import { DatePipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { WrestlerCreateDialog } from '../wrestler-create-dialog/wrestler-create-dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
@@ -25,7 +25,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
     MatMenuModule,
     DatePipe,
     MatPaginatorModule,
-    MatCardModule
+    MatCardModule,
+    DecimalPipe
   ],
 })
 export class WrestlerListComponent implements OnInit {
