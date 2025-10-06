@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Adicionar novo lutador</h1>
+<div mat-dialog-content>
+  <p>Preencha com os dados do lutador</p>
+
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="newWrestler.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Weight (pounds)</mat-label>
+    <input matInput [(ngModel)]="newWrestler.weightInPounds">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Height (feet)</mat-label>
+    <input matInput [(ngModel)]="newWrestler.heightInFeet">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Height (inches)</mat-label>
+    <input matInput [(ngModel)]="newWrestler.heightInInches">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Birth Date</mat-label>
+    <input matInput [(ngModel)]="newWrestler.birthDate">
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-flat-button (click)="onSaveClick()">Create</button>
+</div>

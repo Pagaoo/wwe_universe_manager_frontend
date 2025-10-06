@@ -25,4 +25,8 @@ export class WrestlerService {
   deleteWrestler(id: number): Observable<Wrestler> {
     return this.http.delete<Wrestler>(`${this.apiUrl}/${id}`);
   }
+
+  createWrestler(wrestler: Partial<Wrestler>): Observable<Wrestler> {
+    return this.http.post<Wrestler>(this.apiUrl, wrestler);
+  }
 }
