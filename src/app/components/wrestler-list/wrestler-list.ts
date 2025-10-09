@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Wrestler } from '../../models/wrestler';
 import { WrestlerService } from '../../services/wrestler';
 import { MatDialog } from '@angular/material/dialog';

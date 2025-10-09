@@ -1,15 +1,28 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+}
+
+.main-toolbar {
+  flex-shrink: 0;
+  border: 1px solid #cfc5c5;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  justify-content: center;
 }
 
 .main-container {
   display: flex;
-  height: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+  gap: 16px;
+  padding: 16px;
 }
 
 .content {
+  padding: 16px;
+  overflow-y: hidden;
   flex-grow: 1;
-  padding: 24px;
-  overflow-y: auto;
+  box-sizing: border-box;
 }
