@@ -16,13 +16,11 @@
   display: flex;
   flex-grow: 1;
   overflow: hidden;
-  gap: 16px;
-  padding: 16px;
 }
 
 .content {
-  padding: 16px;
-  overflow-y: hidden;
   flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
   box-sizing: border-box;
 }
